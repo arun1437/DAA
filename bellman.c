@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include<time.h>
 int Bellman_Ford(int G[20][20] , int V, int E, int edge[20][2])
 {
     int i,u,v,k,distance[20],parent[20],S,flag=1;
@@ -31,6 +32,8 @@ int Bellman_Ford(int G[20][20] , int V, int E, int edge[20][2])
 }
 int main()
 {
+    double time_spent = 0.0;
+    clock_t begin = clock();
     int V,edge[20][2],G[20][20],i,j,k=0;
     printf("BELLMAN FORD\n");
     printf("Enter no. of vertices: ");
@@ -47,5 +50,11 @@ int main()
     if(Bellman_Ford(G,V,k,edge))
         printf("\nNo negative weight cycle\n");
     else printf("\nNegative weight cycle exists\n");
+    clock_t end = clock();
+
+	time_spent += (double)(end - begin) / CLOCKS_PER_SEC;
+
+	printf("Time elpased is %f seconds", time_spent);
+
     return 0;
 }
