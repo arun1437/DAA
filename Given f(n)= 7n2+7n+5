@@ -1,0 +1,11 @@
+def func(c1,c2):
+    n=0
+    print("n    c2*g(n)     f(n)    c1*g(n) ")
+    for n in range(10,31):
+        print("%d\t\t%d\t\t%d\t\t%d" %(n,c2*n**2,7*n**2+7*n+5,c1*n**2))
+    for n in range(10,31):
+        if c2*n**2<= 7*n**2+7*n+5<= c1*n**2:
+            return n
+c1=int(input("enter c1 value"))
+c2=int(input("enter c2 value"))
+print("The value of n0 is : ",func(c1,c2))
