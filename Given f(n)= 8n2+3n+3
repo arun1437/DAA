@@ -1,0 +1,10 @@
+def func(c):
+    n=0
+    print("n    f(n)    c*g(n)")
+    for n in range(10,31):
+        print("%d\t%d\t%d" %(n,8*n**2+3*n+3,c*n**2))
+    for n in range(10,31):
+        if 8*n**2+3*n+3 <= c*n**2:
+            return n
+c=int(input("enter c value"))
+print("The value of n0 is : ",func(c))
